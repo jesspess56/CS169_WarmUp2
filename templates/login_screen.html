@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W#C//DTD HTML 4.01//EN">
+<html lang ="en">
+<head>
+	<title>{% block title %}Login Users{% endblock%}</title>
+</head>
+
+<body>
+	<center>
+
+	<h1>Login Counter</h1>
+	{% if error %}
+	<!--Invalid username and password combination. Please try again.-->
+		<p style="color: red;"> {{error_message}}</p>
+	{% else %}
+		<p> "Please enter your credentials below" </p>
+	{% endif %}
+
+	<form action="/search/" method="post">
+	<p><strong> Username: <input id ="login-name" type="text" name="username"> </strong></p>
+	<p><strong> Password: <input id= "login-password" type="password" name="password"> </strong> </p> 
+	
+	<input id="login-button" type="submit" value="Login" name="login_button">
+	<!--<input type="submit" value="Login"> -->
+	&nbsp; &nbsp; &nbsp; &nbsp;
+	<input id="add-button" type="submit" value="Add User" name="add_user_button">
+
+
+	{%block footer %}
+	<hr>
+	<p>Thanks for visiting my site. </p>
+	{% endblock %}
+	 </center>
+</body>
+</html>
+
+
+<!--<html><body><p>content goes here</p></body></html>-->
